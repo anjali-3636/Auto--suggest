@@ -16,3 +16,9 @@ h1{
 #home-card:hover{
     background-color: lavender;
 }
+#nav{
+    text-align: center;
+    background-color: rgb(209, 85, 145);
+    height: 25px;
+    padding-top: 5px;
+}
