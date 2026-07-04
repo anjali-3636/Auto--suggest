@@ -3,34 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Card</title>
+    <title>Portfolio</title>
+
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
 </head>
+
 <body>
 
     <div id="nav">
         <a href="/">Home</a>
         <a href="https://github.com/anjali-3636/Auto--suggest" target="_blank">GitHub</a>
-        <a href="./pages/auto-suggest.html" target="_blank">Pages</a>
-        <a href="/">CodeForces</a>
+        <a href="https://leetcode.com" target="_blank">Leetcode</a>
+        <a href="./pages/autosuggest.html">Auto Suggest</a>
     </div>
 
-    <div id="home-card">
-        <h1>Home Page</h1>
-        <p id="p1">Operations on user card</p>
-        <p id="p2">Toggle, Get Random User, Users Present</p>
+    <div id="Home-intro">
+        <h1>Anjali Durgam</h1>
+        <p id="p1">CSE Student at BVRITH</p>
+        <p id="p2">You can toggle the image.</p>
     </div>
 
     <div id="card">
+
         <div id="card-img">
-            <img src="./images/jane.png" alt="No image found">
+            <img id="img" src="./images/jane.png" alt="Photo not found">
         </div>
 
-        <h1 id="card-name">John Doe</h1>
-        <p id="gender">Female</p>
-    </div>
+        <div id="card-data">
+            <h2 id="card-name">D. Anjali</h2>
+            <p id="card-role">Student at BVRITH</p>
+            <button id="card-btn" onclick="toggle()">Toggle</button>
+        </div>
 
-    <script src="index.js"></script>
+    </div>
 
 </body>
 </html>
