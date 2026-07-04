@@ -1,0 +1,100 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body */
+body{
+    font-family: Arial, sans-serif;
+    background-color: red;
+}
+
+/* White Content Box */
+.container{
+    width:95%;
+    min-height:95vh;
+    margin:20px auto;
+    background-color:white;
+    border-radius:10px;
+    padding:20px;
+}
+
+/* Top Bar */
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* Gear Icon */
+.gear{
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* Online and ms */
+.status{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* Heading */
+h1{
+    text-align:center;
+    font-size:70px;
+    margin-top:80px;
+}
+
+/* Being */
+.purple{
+    color:purple;
+}
+
+/* Infinity */
+.black{
+    color:black;
+}
+
+/* Paragraph */
+p{
+    text-align:center;
+    font-size:26px;
+    margin-top:20px;
+    line-height:1.5;
+}
+
+/* Search Section */
+.search-container{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+/* Search Box */
+.search-box{
+    display:flex;
+    align-items:center;
+}
+
+/* Search Icon */
+.search-icon{
+    font-size:28px;
+    margin-right:10px;
+}
+
+/* Search Input */
+.search-box input{
+    width:450px;
+    height:45px;
+    font-size:18px;
+    padding:10px;
+    border:1px solid #999;
+    border-radius:6px;
+    outline:none;
+}
+
+.search-box input:focus{
+    border:2px solid purple;
+}

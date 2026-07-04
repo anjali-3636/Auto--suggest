@@ -1,16 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Suggest</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#ffffff;
+        margin:40px;
+    }
+
+    .top{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:60px;
+    }
+
+    .left{
+        font-size:18px;
+    }
+
+    .right{
+        font-size:18px;
+    }
+
+    .Page1{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .title{
+        font-size:40px;
+        font-weight:bold;
+        margin-bottom:20px;
+    }
+
+    .auto-color{
+        color:#64b4da;
+    }
+
+    .auto-color12{
+        color:#f4a261;
+    }
+
+    .subtitle{
+        font-size:20px;
+        margin-bottom:20px;
+        color:#555;
+    }
+
+    .search{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin-top:20px;
+    }
+
+    .search-input{
+        width:500px;
+        height:60px;
+        border:2px solid #151313;
+        border-radius:50px;
+        display:flex;
+        align-items:center;
+        padding:0 20px;
+        box-sizing:border-box;
+        background:white;
+    }
+
+    .icon{
+        font-size:22px;
+        color:gray;
+        margin-right:10px;
+    }
+
+    .search-input input{
+        width:100%;
+        border:none;
+        outline:none;
+        font-size:18px;
+        color:#555;
+    }
+
+    .search-input input::placeholder{
+        color:#999;
+    }
+
+    .suggestions{
+        width:450px;
+        height:30px;
+        border:1px solid #999;
+        text-align:center;
+        line-height:30px;
+        color:#555;
+        background:white;
+        margin-top:2px;
+    }
+</style>
+
 </head>
+
 <body>
-    <span>&#9881;</span>
-    <span>&#9200; Online | &#x1F552; -ms</span>
-    <h1>Anjali Durgam</h1>
-    <p>One million phrases. Four algorithms. Prefix Based Auto Suggest.</p>
-    <span>&#128269;<input type="search" placeholder="Start typing to search"></span>
-    <span></span>
+
+<div class="top">
+
+    <div class="left">
+        &#9881;
+    </div>
+
+    <div class="right">
+        &bull; online |
+        &#x1F552; - ms
+    </div>
+
+</div>
+
+<div class="Page1">
+
+    <div class="title">
+        <span class="auto-color">Auto</span><span class="auto-color12">Suggest</span>
+    </div>
+
+    <div class="subtitle">
+        One million phrases. Four algorithms. Prefix Based Auto Suggest.
+    </div>
+
+    <div class="search">
+
+        <div class="search-input">
+
+            <span class="icon">&#128269;</span>
+
+            <input type="text"
+            placeholder="Start Typing to search">
+            
+        </div>
+        <br>
+        <div class="suggestions" id="suggestions">
+            Suggestion Box
+        </div>
+
+    </div>
+
+</div>
+<script>
+    const searchBox = document.querySelector('.search-input input');
+    const suggestionsBox = document.getElementById('suggestions');
+
+    searchBox.addEventListener('input', function() {
+        const userInput = searchBox.value.trim();
+        if (userInput === '') {
+            fetchSuggestions(userInput);
+        } else {
+           var url1='https://autosuggest-backend.onrender.com/api/autosuggest?q=';
+           var url2='&algorithm=brute&limit=10&weighted=false';
+           var url=url1+userInput+url2;
+           fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                console.log(data);
+                var resultsArray=data.results;
+                var htmlResult = '';
+                for (var i = 0; i < resultsArray.length; i++) {
+                    htmlResult += '<div id="suggestion-item">' + resultsArray[i].text + '</div>';
+                }
+                suggestionsBox.innerHTML = htmlResult;
+            })
+
+           }
+      }
+    );
+    //1: get user input
+    //2. make api call to get suggestions
+</script>
+
 </body>
 </html>
+
+
+final
