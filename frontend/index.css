@@ -1,60 +1,56 @@
 h1{
-    color: grey;
+    color : red;
 }
-h2{
-    color:thickgray;
-}
-#Home-intro{
-    text-align: center;
-    background-color: lightgray;
-    border: 3px solid black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-#Home-intro:hover{
-    background-color: lightblue;
-}
-#p2{
-    color: blue;
-}
-#nav{
-    background-color: red;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 25px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-#nav a{
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
-#card{
-    width: 300px;
-    border: 1px solid gray;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
+  #home-intro{
     text-align: center;
 
-}
-#card-img img{
-    width: 100%;
-    height: auto;
-}
-#card-data{
-text-align: center;
+    /* border: 5px;
+    //border-color: black;
+    border-style: solid;*/
+    border: 5px solid navy;
+  }
+     #home-intro:hover{
+        background-color: palevioletred;
+     }
+    #p2{
+        color: blue;
+    }
 
-}
-body{
-    background-color:lavender;
+    #nav{
+        text-align: center;
+        background-color: brown;
+        height: 25px;
+        padding-top: 5px;
+        margin-bottom: 5px;
+    }
 
-}
-#card-btn{
-    background-color: lightblue;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
+    #nav a{
+        margin: 0px 5px;
+        text-decoration: none;
+        color: white;
+    }
+    #card{
+        align-items: center;
+        margin-top: 5px;
+        border:3px solid black;
+        width: 300px;
+        height: 580px;
+        margin: 3px auto;
+    }
+    #card-img{
+        width: 300px;
+        height: 300px;
+        align-items: center;
+        margin: 0px auto;
+    }
+     img{
+        width: 300px;
+        height: 300px;
+    }
+  
+    #action{
+        text-align: center;
+    }
+    button{
+        width: 300px;
+    }
